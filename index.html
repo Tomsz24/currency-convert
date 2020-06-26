@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <title>Kantor walutowy</title>
+  <link rel="stylesheet" href="css/normlize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="JavaScript/main.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <form class="form">
+      <fieldset class="form__fieldset">
+        <legend class="form__fieldset__legend">Kalkulator walutowy</legend>
+        <div class="settings">
+          <select class="form__fieldset__select__BidAsk">
+            <option value="bid">Chce sprzedać</option>
+            <option value="ask">Chce kupić</option>
+          </select>
+          <input class="form__fieldset__input" type="number" min="1" placeholder="ile chcesz wymienić">
+          <select class="form__fieldset__select__currency">
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+            <option value="CHF">CHF</option>
+            <option value="SEK">SEK</option>
+            <option value="DKK">DKK</option>
+            <option value="NOK">NOK</option>
+            <option value="CAD">CAD</option>
+            <option value="JPY">JPY</option>
+            <option value="CZK">CZK</option>
+          </select>
+        </div>
+        <div class="form__exchange">
+          <label>
+            Kurs:
+          </label>
+          <span class="form__exchange__rate"></span>
+        </div>
+        <div class="form__summary">
+          <label>
+            Otrzymujesz:
+          </label>
+          <span class="form__value__summary">. . .</span>
+        </div>
+      </fieldset>
+    </form>
+
+
+
+    <table class="table">
+      <thead class="table__thead">
+        <tr>
+          <th class="table__thead__th"></th>
+          <th class="table__thead__th">Sprzedajesz</th>
+          <th class="table__thead__th">Kupujesz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="cells"><img
+              src="data:image/png;base64,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"
+              alt="unia europejska" class="country"> EUR</td>
+          <td class="cells EURBid"></td>
+          <td class="cells EURAsk"></td>
+        </tr>
+        <tr>
+          <td class="cells"><img class="country" src="https://flagipanstw.pl/wp-content/uploads/2015/05/flaga-usa.png"
+              alt="USA"> USD
+          </td>
+          <td class="cells USDBid"></td>
+          <td class="cells USDAsk"></td>
+        </tr>
+        <tr>
+          <td class="cells"><img src="https://flagipanstw.pl/wp-content/uploads/2015/05/flaga-wielkiej-brytanii.png"
+              alt="wielka brytania" class="country"> GBP</td>
+          <td class="cells GBPBid"></td>
+          <td class="cells GBPAsk"></td>
+        </tr>
+        <tr>
+          <td class="cells"><img src="https://flagipanstw.pl/wp-content/uploads/2015/05/flaga-szwajcarii.png"
+              alt="szwajcaria" class="country"> CHF</td>
+          <td class="cells CHFBid"></td>
+          <td class="cells CHFAsk"></td>
+        </tr>
+        <tr>
+          <td class="cells"><img src="https://flagipanstw.pl/wp-content/uploads/2015/05/flaga-szwecji.png" alt="szwecja"
+              class="country"> SEK</td>
+          <td class="cells SEKBid"></td>
+          <td class="cells SEKAsk"></td>
+        </tr>
+        <tr>
+          <td class="cells"><img src="https://flagipanstw.pl/wp-content/uploads/2015/05/flaga-danii.png" alt="dania"
+              class="country">
+            DKK</td>
+          <td class="cells DKKBid"></td>
+          <td class="cells DKKAsk"></td>
+        </tr>
+        <tr>
+          <td class="cells"><img src="https://flagipanstw.pl/wp-content/uploads/2015/05/flaga-norwegii.png"
+              alt="norwegia" class="country"> NOK</td>
+          <td class="cells NOKBid"></td>
+          <td class="cells NOKAsk"></td>
+        </tr>
+        <tr>
+          <td class="cells"><img src="https://flagipanstw.pl/wp-content/uploads/2015/05/flaga-kanady.png" alt="kanada"
+              class="country"> CAD</td>
+          <td class="cells CADBid"></td>
+          <td class="cells CADAsk"></td>
+        </tr>
+        <tr>
+          <td class="cells"><img src="https://flagipanstw.pl/wp-content/uploads/2015/05/flaga-japonii.png" alt="japonia"
+              class="country"> JPY&sup1;&ordm;&ordm;</td>
+          <td class="cells JPYBid"></td>
+          <td class="cells JPYAsk"></td>
+        </tr>
+        <tr>
+          <td class="cells"><img src="https://flagipanstw.pl/wp-content/uploads/2015/05/flaga-czech.png" alt="czechy"
+              class="country">CZK</td>
+          <td class="cells CZKBid"></td>
+          <td class="cells CZKAsk"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>
