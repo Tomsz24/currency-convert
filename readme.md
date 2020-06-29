@@ -2,6 +2,9 @@
 
 This is a simple Currency converter using API from [NBP.pl](https://api.nbp.pl/)
 
+## How it Looks
+! [currency converter](img/zrzutNaYouCode.PNG)
+
 ## For Users
 
 Chose: Do you want to sell or you want to buy chosen currency.
