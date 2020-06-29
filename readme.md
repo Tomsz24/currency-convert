@@ -3,7 +3,7 @@
 This is a simple Currency converter using API from [NBP.pl](https://api.nbp.pl/)
 
 ## How it Looks
-! [currency converter](img/zrzutNaYouCode.PNG)
+![currency converter](img/zrzutNaYouCode.PNG)
 
 ## For Users
 
