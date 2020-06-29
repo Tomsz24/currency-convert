@@ -2,6 +2,10 @@
 
 This is a simple Currency converter using API from [NBP.pl](https://api.nbp.pl/)
 
+## How it Looks
+![currency conventer](https://zapodaj.net/a6733fed3b52d.png.html)
+
+
 ## For Users
 
 Chose: Do you want to sell or you want to buy chosen currency.
